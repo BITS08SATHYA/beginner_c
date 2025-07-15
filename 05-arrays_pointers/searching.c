@@ -13,7 +13,7 @@ int search(const int *ptr, int size ,int targetElement){
     return -1;
 }
 
-void main(){
+void main() {
 
     int arr[] = {1,7,8,3,54,122};
 
