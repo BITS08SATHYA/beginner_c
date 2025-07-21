@@ -22,7 +22,16 @@ int main(){
 }
 
 void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize){
+
+    int smallsize;
+    if (oldsize < newsize){
+        smallsize = oldsize;
+    }else{
+        smallsize = newsize;
+    }
+
     char* resultArr = (char*)malloc(newsize);
+
     if (!resultArr) return NULL;
     for(int i=0;i<oldsize;i++){
         resultArr[i] = ((char*)srcblock)[i];
