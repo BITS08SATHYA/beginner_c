@@ -3,6 +3,7 @@
 //
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 void* myRealloc(void* srcblock, unsigned oldsize, unsigned newSize);
 
@@ -38,5 +39,18 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize){
     }
     free(srcblock);
     return resultArr;
+}
+
+void* myRealloc_memcpy(void* srcblock, unsigned oldsize, unsigned newsize){
+
+    int smallsize;
+    void* newArr = malloc(newsize);
+    if (oldsize < newsize){
+        smallsize = oldsize;
+    }else{
+        smallsize = newsize;
+    }
+
+    memcpy(newArr, srcblock, smallsize);
 }
 
