@@ -9,6 +9,9 @@
 void* insert(void *arr, unsigned size, unsigned idx, void* src, unsigned sourceSize );
 
 
+
+
+
 int main(){
 
 
@@ -29,3 +32,15 @@ void* insert(void* arr, unsigned size, unsigned idx, void* source, unsigned sour
     return newArr;
 
 }
+
+void* remove1(void *arr, unsigned size, unsigned idx, unsigned sourcesize ){
+
+    void *newArr = malloc(size - sourcesize);
+
+    if(!newArr) return NULL;
+    memcpy(newArr, arr, idx);
+    memcpy((char*) newArr + idx, (char*) arr + idx + sourcesize, size - idx - sourcesize );
+    return newArr;
+
+}
+
