@@ -4,6 +4,33 @@
 #include <stdio.h>
 #include <malloc.h>
 
+void printLowerTriangular(int** a, int n){
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if (i < j){
+//                printf("%d", a[i][j]);
+                printf("0");
+            }else{
+                printf("%d", a[i][j]);
+            }
+        }
+        printf("\n");
+    }
+
+}
+
+void printUpperTriangular(int** a, int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if (i > j) {
+                printf("0");
+            }else{
+                printf("%d", a[i][j]);
+            }
+        }
+    }
+}
 
 
 int** createUpperTriangular(int n){
